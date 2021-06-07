@@ -32,6 +32,10 @@ public class TrafficLightCtrl {
         gui.changeTrafficLightColor(currentState);
     }
 
+    public State getCurrentState(){
+        return currentState;
+    }
+
     public static TrafficLightCtrl getInstance() { //Singleton
         if (instance == null) {
             instance = new TrafficLightCtrl();
@@ -39,7 +43,7 @@ public class TrafficLightCtrl {
         return instance;
     }
 
-    private void initStates() {
+    public void initStates() {
         greenState = new State() {
             @Override
             public State getNextState() {
